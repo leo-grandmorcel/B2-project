@@ -20,3 +20,5 @@
 
 - Observium
 - Chiffrement des données ?
+
+reverse proxy: caddy
