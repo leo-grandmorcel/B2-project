@@ -23,3 +23,12 @@ sudo adduser AllowedUser sudo
 ssh-copy-id AllowedUser@<bastion-host-ip>
 ssh -i <private-key-file> <username>@<bastion-host-ip>
 ```
+
+?
+
+```
+- Autoriser uniquement certains users à se connecter en ssh :
+    ``/etc/ssh/sshd_config
+    AllowUsers <username>
+    sudo systemctl restart ssh``
+```
