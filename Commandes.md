@@ -16,6 +16,7 @@ sudo apt install openssh-server
 sudo nano /etc/ssh/sshd_config
   -PasswordAuthentication no
   -PubkeyAuthentication yes
+  -PermitRootLogin no
 sudo systemctl restart sshd
 sudo adduser AllowedUser
 sudo adduser AllowedUser sudo
