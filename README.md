@@ -9,7 +9,7 @@
 ## 3 technos
 
 - pfSense firewall / Router
-- Apache RProxy / Loadbalancer
+- Apache RProxy / Loadbalancer / Https
 - Bastion Ssh
 
 # 1 moyen de déploiement automatisé
@@ -20,3 +20,5 @@
 
 - Observium
 - Chiffrement des données ?
+
+reverse proxy: caddy
