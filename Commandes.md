@@ -24,6 +24,17 @@ ssh-copy-id AllowedUser@<bastion-host-ip>
 ssh -i <private-key-file> <username>@<bastion-host-ip>
 ```
 
+Add un user Bastion dans l'infra et en faire un jump host
+
+```bash
+sudo nano /etc/ssh/sshd_config
+Host private_network
+    HostName private_network_hostname_or_IP
+    User username
+    ProxyJump bastion_host_username@bastion_host_IP
+sudo systemctl restart sshd
+```
+
 ?
 
 ```
