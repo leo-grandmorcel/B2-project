@@ -39,9 +39,9 @@ sudo nano /etc/ssh/sshd_config
 sudo systemctl restart sshd
 sudo touch /var/log/ssh.log
 sudo useradd Loguser
-sudo passwd Loguser
+sudo passwd Loguser 
 sudo usermod -aG adm Loguser
 sudo chown Loguser /var/log/ssh.log
 sudo chmod 600 /var/log/ssh.log
 ```
-tentatives de co stockées dans /var/log/ssh.log et Loguser peut les lire.
+tentatives de co stockées dans /var/log/ssh.log et Loguser peut les lire.pwd loguser = azertyazerty
