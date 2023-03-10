@@ -24,8 +24,6 @@ ssh-copy-id AllowedUser@<bastion-host-ip>
 ssh -i <private-key-file> <username>@<bastion-host-ip>
 ```
 
-Add un user Bastion dans l'infra et en faire un jump host
-
 ```bash
 sudo nano /etc/ssh/sshd_config
 Host private_network
@@ -34,12 +32,16 @@ Host private_network
     ProxyJump bastion_host_username@bastion_host_IP
 sudo systemctl restart sshd
 ```
-
-?
-
+Logs ssh
+```BASH
+sudo nano /etc/ssh/sshd_config
+  -SyslogFacility AUTHPRIV
+sudo systemctl restart sshd
+sudo touch /var/log/ssh.log
+sudo useradd Loguser
+sudo passwd Loguser
+sudo usermod -aG adm Loguser
+sudo chown Loguser /var/log/ssh.log
+sudo chmod 600 /var/log/ssh.log
 ```
-- Autoriser uniquement certains users à se connecter en ssh :
-    ``/etc/ssh/sshd_config
-    AllowUsers <username>
-    sudo systemctl restart ssh``
-```
+tentatives de co stockées dans /var/log/ssh.log et Loguser peut les lire.
